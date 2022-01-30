@@ -14,12 +14,6 @@
     margin: 0;
   }
 
-  #app {
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   #clock {
     position: absolute;
     right: 0;
@@ -28,5 +22,11 @@
     color: white;
     text-shadow: 0 0 10px black;
     font-size: 500%;
+  }
+
+  #slideshow {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
