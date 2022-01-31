@@ -16,7 +16,7 @@ const Clock = () => {
         hour -= 12
         meridiem = 'PM'
       }
-      setClock(`${hour}:${minute} ${meridiem}`)
+      setClock(`${hour}:${minute}`)
     }, 1000)
   }, [])
 
