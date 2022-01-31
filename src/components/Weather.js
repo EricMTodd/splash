@@ -5,8 +5,6 @@ const Weather = () => {
   const [celsius, setCelsius] = useState(0)
   const [fahrenheit, setFahrenheit] = useState(0)
   const [kelvin, setKelvin] = useState(0)
-  const [lat, setLat] = useState(0)
-  const [lon, setLon] = useState(0)
   const [icon, setIcon] = useState('')
   const [city, setCity] = useState('London')
   const apiKey = '8d9b598296f463cb05d7baea7c741c65'
@@ -16,22 +14,17 @@ const Weather = () => {
       // console.log("Available")
 
       navigator.geolocation.getCurrentPosition((position) => {
-        setLat(position.coords.latitude)
-        setLon(position.coords.longitude)
-      });
-
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
-      .then(response => {
-        setTimeout(() => {
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`)
+        .then(response => {
           console.log(response.data)
           setKelvin(response.data.main.feels_like)
           setCelsius(Math.floor(response.data.main.feels_like - 273.15))
           setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
           setIcon(response.data.weather[0].icon)
           setCity(response.data.name)
-        }, 2000)
-      })
-      .catch(error => console.log(error))
+        })
+        .catch(error => console.log(error))
+      });
     } else {
       // console.log("Not Available")
   
