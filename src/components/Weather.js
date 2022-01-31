@@ -8,8 +8,8 @@ const Weather = () => {
   const [lat, setLat] = useState(0)
   const [lon, setLon] = useState(0)
   const [icon, setIcon] = useState('')
+  const [city, setCity] = useState('London')
   const apiKey = '8d9b598296f463cb05d7baea7c741c65'
-  const city = 'London'
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -19,13 +19,17 @@ const Weather = () => {
         setLat(position.coords.latitude)
         setLon(position.coords.longitude)
       });
-  
+
       axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
       .then(response => {
-        setKelvin(response.data.main.feels_like)
-        setCelsius(Math.floor(response.data.main.feels_like - 273.15))
-        setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
-        setIcon(response.data.weather[0].icon)
+        setTimeout(() => {
+          console.log(response.data)
+          setKelvin(response.data.main.feels_like)
+          setCelsius(Math.floor(response.data.main.feels_like - 273.15))
+          setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
+          setIcon(response.data.weather[0].icon)
+          setCity(response.data.name)
+        }, 2000)
       })
       .catch(error => console.log(error))
     } else {
@@ -40,12 +44,11 @@ const Weather = () => {
       })
       .catch(error => console.log(error))
     }
-
-
   }, [])
 
   return(
     <div id='weather'>
+      <h1>{city}</h1>
       <h1>{fahrenheit}° F</h1>
       <img src={`http://openweathermap.org/img/wn/${icon}.png`}/>
     </div>
