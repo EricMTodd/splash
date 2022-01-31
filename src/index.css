@@ -1,7 +1,7 @@
 /* DESKTOP STYLES */
 @media (min-width: 601px) {
   * {
-    font-family: arial, sans-serif;
+    font-family: 'Fira Sans', arial, sans-serif;
     color: white;
   }
 
