@@ -19,6 +19,10 @@
     font-size: 500%;
   }
 
+  #clock * {
+    font-weight: normal;
+  }
+
   #data-container {
     position: absolute;
     right: 0;
@@ -42,6 +46,10 @@
     display: flex;
     align-items: flex-end;
     gap: 25px;
+  }
+
+  #weather * {
+    font-weight: normal;
   }
 
   #weather h1 {
