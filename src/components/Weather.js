@@ -16,15 +16,12 @@ const Weather = () => {
       // console.log("Available")
 
       navigator.geolocation.getCurrentPosition((position) => {
-        // console.log("Latitude is :", position.coords.latitude)
         setLat(position.coords.latitude)
-        // console.log("Longitude is :", position.coords.longitude)
         setLon(position.coords.longitude)
       });
   
-      axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
       .then(response => {
-        // console.log(response)
         setKelvin(response.data.main.feels_like)
         setCelsius(Math.floor(response.data.main.feels_like - 273.15))
         setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
