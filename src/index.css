@@ -17,7 +17,6 @@
 
   #clock {
     font-size: 500%;
-    
   }
 
   #data-container {
@@ -37,4 +36,19 @@
     background-size: cover;
     text-shadow: 0 0 10px black;
   }
+
+  #weather {
+    font-size: 200%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  #weather h1 {
+    margin-bottom: 12px;
+  }
+
+  #weather img {
+    height: 100px;
+  }
+
 }
