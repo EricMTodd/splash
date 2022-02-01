@@ -31,13 +31,13 @@
     text-shadow: 0 0 10px black;
     display: flex;
     align-items: baseline;
-    /* gap: 25px; */
   }
 
   #slideshow {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     text-shadow: 0 0 10px black;
   }
 
