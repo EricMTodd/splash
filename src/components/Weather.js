@@ -25,7 +25,7 @@ const Weather = () => {
     'Johannesburg',
     'Mexico City',
     'Sao Paulo',
-    'Guadalahara',
+    'Guadalajara',
     'Lima',
     'Bangkok',
     'Hong Kong',
@@ -51,7 +51,6 @@ const Weather = () => {
   const getRandomCity = () => {
     let newCity = cities[Math.floor(Math.random() * cities.length)]
     setCity(newCity)
-
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}`)
     .then(response => {
       setCountry(response.data.sys.country)
@@ -59,34 +58,35 @@ const Weather = () => {
       setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
       setIcon(response.data.weather[0].icon)
     })
-    .catch(error => console.log(error))
+  }
+  
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError)
+    } else {
+      getRandomCity()
+    }
   }
 
-  const getLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`)
-      .then(response => {
-        setCountry(response.data.sys.country)
-        setCelsius(Math.floor(response.data.main.feels_like - 273.15))
-        setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
-        setIcon(response.data.weather[0].icon)
-        setCity(response.data.name)
-      })
-      .catch(error => console.log(error))
-    });
+  const showPosition = (position) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`)
+    .then(response => {
+      setCountry(response.data.sys.country)
+      setCelsius(Math.floor(response.data.main.feels_like - 273.15))
+      setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
+      setIcon(response.data.weather[0].icon)
+      setCity(response.data.name)
+    })
+  }
+
+  const showError = (error) => {
+    getRandomCity()
   }
 
   useEffect(() => {
-    if ("geolocation" in navigator) {
-      getLocation()
-      let timer = setInterval(() => {
-        getLocation()
-      }, 900000)
-    }
-
-    getRandomCity()
+    getLocation()
     let timer = setInterval(() => {
-      getRandomCity()
+      getLocation()
     }, 900000)
     return () => clearInterval(timer)
   }, [])
