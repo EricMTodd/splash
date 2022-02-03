@@ -5,12 +5,16 @@
 
 body {
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
   background-color: black;
 }
 
 h1 {
   margin: 0;
+}
+
+html {
+  height: 100%;
 }
 
 #app {
