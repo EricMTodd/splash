@@ -2,8 +2,6 @@ import Clock from './components/Clock'
 import Slideshow from './components/Slideshow'
 import Weather from './components/Weather'
 
-
-
 const App = () => {
 
   return(

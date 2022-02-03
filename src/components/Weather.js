@@ -95,7 +95,7 @@ const Weather = () => {
   if (country === 'US') {
     return(
       <div id='weather'>
-        <h1>{city}</h1>
+        <h1 id='city'>{city}</h1>
         <h1>{fahrenheit}° F</h1>
         <img src={`http://openweathermap.org/img/wn/${icon}.png`}/>
       </div>
@@ -104,7 +104,7 @@ const Weather = () => {
 
   return(
     <div id='weather'>
-      <h1>{city}</h1>
+      <h1 id='city'>{city}</h1>
       <h1>{celsius}° C</h1>
       <img src={`http://openweathermap.org/img/wn/${icon}.png`}/>
     </div>
