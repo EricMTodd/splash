@@ -19,7 +19,7 @@ const Weather = () => {
     'Washington D.C.',
     'Berlin',
     'Edinburgh',
-    'Dehli',
+    'New Delhi',
     'Mumbai',
     'Baghdad',
     'Johannesburg',
@@ -34,7 +34,15 @@ const Weather = () => {
     'Reykjavik',
     'Oslo',
     'Bern',
-    'Brussels'
+    'Brussels',
+    'Rome',
+    'Toronto',
+    'Anchorage',
+    'Phoenix',
+    'Las Vegas',
+    'Canberra',
+    'Sydney',
+    'Ontario'
   ]
   const [city, setCity] = useState(cities[Math.floor(Math.random() * cities.length)])
   const [country, setCountry] = useState('')
