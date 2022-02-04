@@ -1,67 +1,60 @@
-* {
-  font-family: 'Fira Sans', arial, sans-serif;
-  color: white;
+/* DESKTOP STYLES */
+@media (min-width: 601px) {
 }
 
-body {
-  margin: 0 auto;
-  height: 100vh;
-  background-color: black;
-}
+/* MOBILE STYLES */
+/* Global styles */
+@media (max-width: 600px) {
+  * {
+    font-family: 'Fira Sans', arial, sans-serif;
+    color: white;
+    font-weight: 400;
+    text-shadow: 0 0 10px black;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  /* Class styles */
+  
+  /* Id styles */
+  #city {
+    margin-right: 15px;
+  }
 
-h1 {
-  margin: 0;
-}
+  #clock {
+    font-size: 72px;
+  }
 
-#app {
-  height: 100vh;
-}
+  #clock > h1 {
+    font-weight: 200;
+  }
 
-#city {
-  margin-right: 25px;
-  margin-left: 60px;
-}
+  #data-container {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    align-items: center;
+    width: 100vw;
+    top: 33.333%;
+  }
 
-#clock {
-  font-size: 800%;
-}
+  #slideshow {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-#clock * {
-  font-weight: 200;
-}
+  #weather {
+    display: flex;
+    align-items: center;
 
-#data-container {
-  position: absolute;    
-  right: 0;
-  left: 0;
-  top: 33.333%;
-  margin: auto;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  text-shadow: 0 0 10px black;
-}
-
-#slideshow {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-
-}
-
-#weather {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 200%;
-  width: 100%;
-}
-
-#weather * {
-  font-weight: 400;
-}
-
-#weather img {
-  height: 100px;
-  margin-right: 0;
+  }
 }
