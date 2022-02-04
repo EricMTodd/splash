@@ -44,12 +44,12 @@
   }
 
   #clock {
-    font-size: 96px;
+    font-size: 15vh;
     padding-right: 60px;
   }
 
   #weather {
-    font-size: 32px;
+    font-size: 5vh;
     display: flex;
     align-items: center;
   }
@@ -59,7 +59,7 @@
   }
 
   #weather > img {
-    height: 96px;
+    height: 20vh;
   }
 }
 
