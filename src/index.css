@@ -5,7 +5,7 @@
   * {
     font-family: 'Fira Sans', arial, sans-serif;
     color: white;
-    font-weight: 400;
+    font-weight: 200;
     text-shadow: 0 0 10px black;
   }
 
@@ -52,6 +52,10 @@
     font-size: 32px;
     display: flex;
     align-items: center;
+  }
+  
+  #weather > h1 {
+    font-weight: 300;
   }
 
   #weather > img {
