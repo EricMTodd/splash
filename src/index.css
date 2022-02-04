@@ -1,5 +1,61 @@
 /* DESKTOP STYLES */
 @media (min-width: 601px) {
+  /* Global styles */
+
+  * {
+    font-family: 'Fira Sans', arial, sans-serif;
+    color: white;
+    font-weight: 400;
+    text-shadow: 0 0 10px black;
+  }
+
+  body {
+    height: 100vh;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+
+  /* Class styles */
+
+  /* Id styles */
+  #data-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  #slideshow {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #city {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #clock {
+    font-size: 96px;
+  }
+
+  #weather {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+  }
+
+  #weather > img {
+    height: 96px;
+  }
 }
 
 /* MOBILE STYLES */
