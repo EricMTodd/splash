@@ -1,5 +1,5 @@
 /* DESKTOP STYLES */
-@media (min-width: 601px) {
+@media (min-width: 1025px) {
   /* Global styles */
 
   * {
@@ -65,7 +65,7 @@
 
 /* MOBILE STYLES */
 /* Global styles */
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   * {
     font-family: 'Fira Sans', arial, sans-serif;
     color: white;
@@ -90,7 +90,7 @@
   }
 
   #clock {
-    font-size: 72px;
+    font-size: 20vw;
   }
 
   #clock > h1 {
@@ -116,6 +116,10 @@
   #weather {
     display: flex;
     align-items: center;
+    font-size: 4vw;
+  }
 
+  #weather img {
+    height: 8vh;
   }
 }
