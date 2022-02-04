@@ -1,5 +1,5 @@
 /* DESKTOP STYLES */
-@media (min-width: 1025px) {
+@media (orientation: landscape) {
   /* Global styles */
 
   * {
@@ -44,12 +44,12 @@
   }
 
   #clock {
-    font-size: 15vh;
-    padding-right: 60px;
+    font-size: 10vh;
+    padding-right: 5vh;
   }
 
   #weather {
-    font-size: 5vh;
+    font-size: 3vh;
     display: flex;
     align-items: center;
   }
@@ -59,13 +59,13 @@
   }
 
   #weather > img {
-    height: 20vh;
+    height: 10vh;
   }
 }
 
 /* MOBILE STYLES */
 /* Global styles */
-@media (max-width: 1024px) {
+@media (orientation: portrait) {
   * {
     font-family: 'Fira Sans', arial, sans-serif;
     color: white;
