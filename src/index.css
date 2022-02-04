@@ -27,7 +27,7 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: baseline;
   }
 
@@ -45,6 +45,7 @@
 
   #clock {
     font-size: 96px;
+    padding-right: 60px;
   }
 
   #weather {
