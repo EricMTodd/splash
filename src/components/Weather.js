@@ -54,8 +54,8 @@ const Weather = () => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}`)
     .then(response => {
       setCountry(response.data.sys.country)
-      setCelsius(Math.floor(response.data.main.feels_like - 273.15))
-      setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
+      setCelsius(Math.floor(response.data.main.temp - 273.15))
+      setFahrenheit(Math.floor((response.data.main.temp - 273.15) * 9 / 5 + 32))
       setIcon(response.data.weather[0].icon)
     })
   }
@@ -71,9 +71,10 @@ const Weather = () => {
   const showPosition = (position) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`)
     .then(response => {
+      console.log(response)
       setCountry(response.data.sys.country)
-      setCelsius(Math.floor(response.data.main.feels_like - 273.15))
-      setFahrenheit(Math.floor((response.data.main.feels_like - 273.15) * 9 / 5 + 32))
+      setCelsius(Math.floor(response.data.main.temp - 273.15))
+      setFahrenheit(Math.floor((response.data.main.temp - 273.15) * 9 / 5 + 32))
       setIcon(response.data.weather[0].icon)
       setCity(response.data.name)
     })
