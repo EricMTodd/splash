@@ -7,6 +7,9 @@ const Clock = () => {
     setInterval(() => {
       const date = new Date()
       let hour = date.getHours()
+      if (hour === 0) {
+        hour = 12
+      }
       let minute = date.getMinutes()
       if (minute < 10) {
         minute = '0' + minute
