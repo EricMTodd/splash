@@ -71,7 +71,6 @@ const Weather = () => {
   const showPosition = (position) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`)
     .then(response => {
-      console.log(response)
       setCountry(response.data.sys.country)
       setCelsius(Math.floor(response.data.main.temp - 273.15))
       setFahrenheit(Math.floor((response.data.main.temp - 273.15) * 9 / 5 + 32))

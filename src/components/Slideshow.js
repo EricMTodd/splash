@@ -7,12 +7,12 @@ const Slideshow = () => {
   const [photos, setPhotos] = useState([])
   const apiKey = '39ebf8206b5f188179bf4176fadf9407'
   const userId = '194608125%40N04'
-  const url =`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&user_id=${userId}&per_page=300&page=&format=json&nojsoncallback=1`
+  const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&user_id=${userId}&per_page=343&page=&format=json&nojsoncallback=1`
   
   useEffect(() => {
     axios.get(url)
     .then(response => {
-      setPhotos(response.data.photos.photo)
+      setPhotos(response.data.photos.photo.slice(44, response.data.photos.photo[-1]))
     })
     .catch(error => console.log(error))
   }, [])
